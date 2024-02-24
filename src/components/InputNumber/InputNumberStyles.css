@@ -1,0 +1,40 @@
+.number-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .number-left::before,
+  .number-right::after {
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    width: 20px;
+    color: #F8F7F2;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin: 5px 0px 5px 5px;
+  }
+  
+  .number-left::before {
+    content: "-";
+  }
+  
+  .number-right::after {
+    content: "+";
+  }
+  
+  .number-quantity {
+    padding: 7px;
+    width: 65px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family: 'Share Tech';
+  }
+  
+  .number-left:hover::before,
+  .number-right:hover::after {
+    background-color: #666666;
+  }
+  
