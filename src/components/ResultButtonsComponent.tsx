@@ -1,11 +1,12 @@
 'use client'
+import { useGlobalContext } from '@/context/GlobalContext';
 import { Box, ButtonBase, useTheme  } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 
 const ResultButtons: React.FC = () => {
+    const { resumeSelected, setResumeSelected } = useGlobalContext();
     const theme = useTheme();
-    const [resumeSelected, setResumeSelected] = useState(false)
-
+    
     const handleClick = () => {
         setResumeSelected(false)
     }

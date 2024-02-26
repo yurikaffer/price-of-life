@@ -7,12 +7,10 @@ import InputSalary from './InputSalary/InputSalary';
 import InputCost from './InputCost/InputCost';
 import InputWorkHours from './InputWorkHours/InputWorkHours';
 import { useGlobalContext } from '@/context/GlobalContext';
-import { convertCurrencyStringToNumber, convertTimeStringToMilliseconds } from '@/utils/FormatUtils';
-import { calcularRendimentoPorHoraEmReais } from '@/utils/Calculation';
-
+import { calculatePurchaseTime } from '@/utils/Calculation';
 
 const CardForm: React.FC = () => {
-    const { isChecked, numRecorrence, salary, cost, workHours } = useGlobalContext();
+    const { isChecked, numRecorrence, salary, cost, workHours, setHourlyIncome, setHoursNeededToPurchase, setWorkDaystoPurchase } = useGlobalContext();
 
     const inputSalaryRef = useRef<{ validateSalary: () => boolean } | null>(null);
     const inputCostRef = useRef<{ validateCost: () => boolean } | null>(null);
@@ -32,13 +30,18 @@ const CardForm: React.FC = () => {
 
     const onClick = () => {
         if (validateForm()) {
-            console.log('isChecked ',isChecked)
-            console.log('numRecorrence ', numRecorrence)
-            console.log('salary ',convertCurrencyStringToNumber(salary))
-            console.log('cost ',convertCurrencyStringToNumber(cost))
-            console.log('workHours ',convertTimeStringToMilliseconds(workHours))
+            //console.log('isChecked ',isChecked)
+            //console.log('numRecorrence ', numRecorrence)
+            //console.log('salary ',convertCurrencyStringToNumber(salary))
+            //console.log('cost ',convertCurrencyStringToNumber(cost))
+            //console.log('workHours ',convertTimeStringToMilliseconds(workHours))
 
-            console.log('Rendimento por hora: ', calcularRendimentoPorHoraEmReais(convertCurrencyStringToNumber(salary), convertTimeStringToMilliseconds(workHours)))
+            const calcData = calculatePurchaseTime(salary, workHours, cost)
+            setHourlyIncome(calcData.hourlyEarnings)
+            setHoursNeededToPurchase(calcData.hoursNeededToPurchase)
+            setWorkDaystoPurchase(calcData.workDaystoPurchase)
+
+
         }
     };
 
