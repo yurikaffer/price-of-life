@@ -4,6 +4,7 @@ import Navbar from '@/components/NavbarComponent';
 import CardForm from '@/components/CardFormComponent';
 import ResultButtons from '@/components/ResultButtonsComponent';
 import CardResume from '@/components/CardResumeComponent';
+import CardResultList from '@/components/CardResultList/CardResultList';
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
         <CardForm />
         <ResultButtons />
         <CardResume/>
+        <CardResultList/>
 
 
 

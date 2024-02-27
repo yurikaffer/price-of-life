@@ -7,7 +7,7 @@ const InputNumberComponent: React.FC = () => {
     const { isChecked, numRecorrence, setNumRecorrence } = useGlobalContext();
 
     const subtractNumber = () => {
-        if (numRecorrence !== 0 ){
+        if (numRecorrence !== 1 ){
             setNumRecorrence(numRecorrence -1)
         }
     }

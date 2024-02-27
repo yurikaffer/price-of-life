@@ -4,7 +4,7 @@ import { Box, ButtonBase, useTheme  } from '@mui/material';
 import React from 'react';
 
 const ResultButtons: React.FC = () => {
-    const { resumeSelected, setResumeSelected } = useGlobalContext();
+    const { resumeSelected, setResumeSelected, hourlyIncome, hoursNeededToPurchase } = useGlobalContext();
     const theme = useTheme();
     
     const handleClick = () => {
@@ -25,12 +25,14 @@ const ResultButtons: React.FC = () => {
         color: resumeSelected ? '#EEE8D9' : theme.palette.primary.dark,
     }
 
-    return (
-        <Box display={'flex'} gap={2} minWidth={'250px'} justifyContent={'center'} margin={'auto'} >
-            <ButtonBase sx={mainStyle} onClick={handleClick}> Visão Geral </ButtonBase>
-            <ButtonBase sx={ResumeStyle} onClick={handleClickResume}> Resumo </ButtonBase>
-        </Box>
-    )
+    if (hourlyIncome && hoursNeededToPurchase) {
+        return (
+            <Box display={'flex'} gap={2} minWidth={'250px'} justifyContent={'center'} margin={'auto'} >
+                <ButtonBase sx={mainStyle} onClick={handleClick}> Visão Geral </ButtonBase>
+                <ButtonBase sx={ResumeStyle} onClick={handleClickResume}> Resumo </ButtonBase>
+            </Box>
+        )
+    }
 }
 
 export default ResultButtons

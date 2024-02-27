@@ -7,41 +7,46 @@ import InputSalary from './InputSalary/InputSalary';
 import InputCost from './InputCost/InputCost';
 import InputWorkHours from './InputWorkHours/InputWorkHours';
 import { useGlobalContext } from '@/context/GlobalContext';
-import { calculatePurchaseTime } from '@/utils/Calculation';
+import { calculateData } from '@/utils/Calculation';
 
 const CardForm: React.FC = () => {
-    const { isChecked, numRecorrence, salary, cost, workHours, setHourlyIncome, setHoursNeededToPurchase, setWorkDaystoPurchase } = useGlobalContext();
+    const { numRecorrence, 
+            salary, 
+            cost, 
+            workHours, 
+            setHourlyIncome, 
+            setHoursNeededToPurchase, 
+            setWorkDaystoPurchase, 
+            setPercentageOfSalary,
+            setAnnualCostInReais,
+            setAnnualCostInTime,
+            isChecked
+        } = useGlobalContext();
 
     const inputSalaryRef = useRef<{ validateSalary: () => boolean } | null>(null);
     const inputCostRef = useRef<{ validateCost: () => boolean } | null>(null);
     const inputWorkHoursRef = useRef<{ validateWorkHours: () => boolean } | null>(null);
     
     const validateForm = () => {
-        // Cria um array com todas as refs
         const validations = [
             inputSalaryRef.current?.validateSalary(),
             inputCostRef.current?.validateCost(),
             inputWorkHoursRef.current?.validateWorkHours(),
         ];
-        // Verifica se todas as validações são verdadeiras
-        const isValid = validations.every(validation => validation === true);
-        return isValid;
+        return validations.every(validation => validation === true);
     };
 
     const onClick = () => {
         if (validateForm()) {
-            //console.log('isChecked ',isChecked)
-            //console.log('numRecorrence ', numRecorrence)
-            //console.log('salary ',convertCurrencyStringToNumber(salary))
-            //console.log('cost ',convertCurrencyStringToNumber(cost))
-            //console.log('workHours ',convertTimeStringToMilliseconds(workHours))
-
-            const calcData = calculatePurchaseTime(salary, workHours, cost)
+            const calcData = calculateData(salary, workHours, cost, numRecorrence)
             setHourlyIncome(calcData.hourlyEarnings)
             setHoursNeededToPurchase(calcData.hoursNeededToPurchase)
             setWorkDaystoPurchase(calcData.workDaystoPurchase)
-
-
+            setPercentageOfSalary(calcData.percentageOfSalary)
+            if (isChecked) {
+                setAnnualCostInReais(calcData.annualCostInReais)
+                setAnnualCostInTime(calcData.annualCostInTime)
+            }
         }
     };
 

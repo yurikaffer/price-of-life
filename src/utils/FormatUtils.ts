@@ -1,4 +1,3 @@
-// Formatar como moeda em reais
 export const formatToCurrency = (value: string) => {
     const numberValue = Number(value.replace(/\D/g, '')) / 100;
     return numberValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -21,4 +20,26 @@ export function convertTimeStringToMilliseconds(timeString: string) {
     // Soma os milissegundos das horas e minutos
     const totalMilliseconds = hoursInMilliseconds + minutesInMilliseconds;
     return totalMilliseconds;
+}
+
+// Converter horas em formato '00d00h00m'
+export function formatTime(hours: number) {
+    const totalHours = Math.floor(hours);
+    const minutesPart = Math.round((hours - totalHours) * 60);
+
+    return `${totalHours}h ${minutesPart}m `;
+}
+
+// Função ajustada para formatar workDaystoPurchase em '00d00h00m'
+export function formatDaysHoursMinutes(days: number, hoursPerDay: number) {
+    const fullDays = Math.floor(days);
+    const remainderDays = days - fullDays;
+    const hours = Math.floor(remainderDays * hoursPerDay);
+    const minutes = Math.round(((remainderDays * hoursPerDay) - hours) * 60);
+
+    if (fullDays > 0) {
+        return `${fullDays}d ${hours}h ${minutes}m `;
+    } else {
+        return `${hours}h ${minutes}m `;
+    }
 }

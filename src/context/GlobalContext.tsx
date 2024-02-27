@@ -11,6 +11,12 @@ interface GlobalContextType {
     resumeSelected: boolean;
     hoursNeededToPurchase: string;
     workDaystoPurchase: string;
+    percentageOfSalary: string;
+    annualCostInReais: string;
+    annualCostInTime: string;
+    setAnnualCostInTime: (value: string) => void;
+    setAnnualCostInReais: (value: string) => void;
+    setPercentageOfSalary: (value: string) => void;
     setWorkDaystoPurchase: (value: string) => void;
     setHoursNeededToPurchase: (value: string) => void;
     setResumeSelected: (value: boolean) => void;
@@ -30,41 +36,28 @@ interface GlobalProviderProps {
 
 export const GlobalProvider = ({ children }: GlobalProviderProps) => {
     const [isChecked, setIsChecked] = useState(false);
-    const [numRecorrence, setNumRecorrence] = useState(0)
-
+    const [numRecorrence, setNumRecorrence] = useState(1)
     const [salary, setSalary] = useState('');
     const [cost, setCost] = useState('');
     const [workHours, setWorkHours] = useState('');
-
     const [hourlyIncome, setHourlyIncome] = useState('')
-
-
     const [resumeSelected, setResumeSelected] = useState(false)
-
     const [hoursNeededToPurchase, setHoursNeededToPurchase] = useState('')
     const [workDaystoPurchase, setWorkDaystoPurchase] = useState('')
-
-    
+    const [percentageOfSalary, setPercentageOfSalary] = useState('')
+    const [annualCostInReais, setAnnualCostInReais] = useState('')
+    const [annualCostInTime, setAnnualCostInTime] = useState('')
 
     const handleCheckboxChange = () => {
         if (isChecked) {
             setIsChecked(false);
-            setNumRecorrence(0);
+            setNumRecorrence(1);
+            setAnnualCostInReais('');
+            setAnnualCostInTime('');
         } else {
             setIsChecked(true);
         }
     };
-
-
-
-
-
-
-
-    
-
-
-
 
     return (
         <GlobalContext.Provider value= {{ 
@@ -85,14 +78,18 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
                 hoursNeededToPurchase, 
                 setHoursNeededToPurchase,
                 workDaystoPurchase, 
-                setWorkDaystoPurchase
-
+                setWorkDaystoPurchase,
+                percentageOfSalary, 
+                setPercentageOfSalary,
+                annualCostInReais, 
+                setAnnualCostInReais,
+                annualCostInTime, 
+                setAnnualCostInTime
             }}>
             {children }
         </GlobalContext.Provider>
     );
 };
-
 
 export const useGlobalContext = () => { const context = useContext(GlobalContext);
     if (context === undefined) {
