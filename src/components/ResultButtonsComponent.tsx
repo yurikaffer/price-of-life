@@ -34,18 +34,15 @@ const ResultButtons: React.FC = () => {
     }
 
     const mainStyle = {
-        backgroundColor: overviewSelected ? '#EEE8D9' : theme.palette.primary.dark,
-        color: overviewSelected ? theme.palette.primary.dark : '#EEE8D9',
+        backgroundColor: overviewSelected ? theme.palette.primary.light : theme.palette.primary.dark,
     }
 
     const ResumeStyle = {
-        backgroundColor: resumeSelected ? '#EEE8D9' : theme.palette.primary.dark,
-        color: resumeSelected ? theme.palette.primary.dark : '#EEE8D9',
+        backgroundColor: resumeSelected ? theme.palette.primary.light : theme.palette.primary.dark,
     }
 
     const AIStyle = {
-        backgroundColor: resumeAISelected ? '#EEE8D9' : theme.palette.primary.dark,
-        color: resumeAISelected ? theme.palette.primary.dark : '#EEE8D9',
+        backgroundColor: resumeAISelected ? theme.palette.primary.light : theme.palette.primary.dark,
     }
 
     if (hourlyIncome && hoursNeededToPurchase) {

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, forwardRef, useImperativeHandle } from 'react';
 import { useGlobalContext } from '../../context/GlobalContext';
-import { InputBase, Typography } from '@mui/material';
+import { Box, InputBase, Typography } from '@mui/material';
 import { z } from 'zod';
 
 // Esquema Zod para validar a carga horária diária como HH:mm
@@ -39,16 +39,16 @@ const InputWorkHours = forwardRef((props, ref) => {
     };
 
     return (
-        <>
+        <Box mb={1}>
+            <Typography ml={1} fontSize={16}>Carga horária diária (hh:mm):</Typography>
             <InputBase
-                    placeholder="Carga horária diária (hh:mm)"
                     value={workHours}
                     onChange={handleWorkHoursChange}
                     inputProps={{ maxLength: 5 }}
                     type="text"
                 />
                 {msgErrorWorkHours && (<Typography ml={1} fontSize={14} color={'red'}>{msgErrorWorkHours}</Typography>)}
-        </>
+        </Box>
     );
 });
 

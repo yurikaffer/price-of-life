@@ -52,11 +52,11 @@ const CardForm: React.FC = () => {
 
     return (
         <Card>
-            <Box display={'flex'} flexDirection={'column'} gap={1}>
+            <Box display={'flex'} flexDirection={'column'}>
                 <InputSalary ref={inputSalaryRef}/>
                 <InputCost ref={inputCostRef}/>
                 <InputWorkHours ref={inputWorkHoursRef}/>
-                <Box display={'flex'} alignItems={'center'} justifyContent={'center'} gap={2} mb={1}>
+                <Box display={'flex'} alignItems={'center'} justifyContent={'center'} gap={2} mb={2}>
                     <CheckBoxComponent />
                     <InputNumberComponent />
                 </Box>

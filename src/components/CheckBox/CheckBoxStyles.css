@@ -15,30 +15,28 @@
     position: relative;
     top: 0;
     left: 0;
-    height: 1.3em;
-    width: 1.3em;
-    background-color: #4a6d8a00;
+    height: 1.2em;
+    width: 1.2em;
     border-radius: 0.25em;
     transition: all 0.25s;
   }
   
   .container input:checked ~ .checkmark {
-    background-color: #212020;
-    
+    background-color: #01936E;
   }
   
   .checkmark:after {
     content: "";
     position: absolute;
     transform: rotate(0deg);
-    border: 0.1em solid black;
+    border: 0.1em solid DDDDDD;
     left: 0;
     top: 0;
     width: 1.05em;
     height: 1.05em;
     border-radius: 0.25em;
     transition: all 0.25s, border-width 0.1s;
-    border: 2px solid #212020;
+    border: 2px solid #DDDDDD;
   }
   
   .container input:checked ~ .checkmark:after {

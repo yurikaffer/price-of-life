@@ -37,12 +37,12 @@ const InputCost = forwardRef((props, ref) => {
 
     return (
         <>
+            <Typography ml={1} fontSize={16}>Custo do item:</Typography>
             <InputBase
-                placeholder='Custo do item'
                 value={cost}
                 onChange={handleCostChange}
                 inputMode='numeric'
-                type="text" // Deve ser "text" para permitir a máscara de moeda
+                type="text" 
             />
             {msgErrorCost && (<Typography ml={1} fontSize={14} color={'red'}>{msgErrorCost}</Typography>)}
         </>

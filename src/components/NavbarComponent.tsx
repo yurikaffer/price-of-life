@@ -8,12 +8,12 @@ const Navbar: React.FC = () => {
         <Card sx={{ padding: 2 }}>
             <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
                 <ButtonBase sx={{ width: '35px', padding: 0.7 }} >
-                    <ColorLensIcon />
-                </ButtonBase>
-                <ButtonBase sx={{ width: '100px' }} > Novo </ButtonBase>
-                <ButtonBase sx={{ width: '35px', padding: 0.7 }} >
                     <InfoIcon />
                 </ButtonBase>
+                <ButtonBase sx={{ width: '100px' }} > Novo </ButtonBase>
+                <Box sx={{ width: '35px', padding: 0.7 }} />
+                
+                
             </Box>
         </Card>
     )

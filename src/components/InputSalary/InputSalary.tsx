@@ -38,8 +38,8 @@ const InputSalary = forwardRef((props, ref) => {
 
     return (
         <>
+            <Typography ml={1} fontSize={16}>Salário líquido:</Typography>
             <InputBase
-                placeholder='Salário líquido'
                 value={salary}
                 onChange={handleSalaryChange}
                 inputMode='numeric'

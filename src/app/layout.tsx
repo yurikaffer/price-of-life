@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '@/theme/Theme';
 import { GlobalProvider } from '../context/GlobalContext';
+import { CssBaseline } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <GlobalProvider>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <html lang="en">
           <body className={inter.className}>{children}</body>
         </html>

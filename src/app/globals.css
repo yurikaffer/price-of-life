@@ -12,5 +12,8 @@ body {
   overflow-x: hidden;
   font-family: 'Share Tech', sans-serif;
   min-width: 320px;
-  background-color: #BCBBB3;
+}
+
+.strongColor {
+  color: #01936E;
 }

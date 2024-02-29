@@ -5,11 +5,11 @@
   
   .number-left::before,
   .number-right::after {
-    background-color: #333333;
+    background-color: #01936E;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
+    border: 1px solid 3A3C45;
     width: 20px;
     color: #F8F7F2;
     transition: background-color 0.3s;
@@ -28,13 +28,15 @@
   .number-quantity {
     padding: 7px;
     width: 65px;
-    border: 2px solid black;
+    border: 0.1px solid #3A3C45;
     border-radius: 5px;
     font-family: 'Share Tech';
+    background-color: #3A3C45;
+    color: #DDDDDD;
   }
   
   .number-left:hover::before,
   .number-right:hover::after {
-    background-color: #666666;
+    background-color: #3A3C45;
   }
   

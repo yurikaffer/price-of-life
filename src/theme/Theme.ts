@@ -2,56 +2,68 @@
 import { createTheme } from '@mui/material/styles';
 
 const customColors = {
-  primaryMain: '#EEE8D9',
-  primaryLight: '#F8F7F2',
-  primaryDark: '#212020',
-  contrastText: '#212020',
+  card: '#242529',
+  bgInput: '#3A3C45',
+  bgButons: '#01936E',
+  body: '#121212',
+  textColor: '#DDDDDD',
+  texColorButtons: '#DDDDDD',
+  border: 'none'
 };
 
 const theme = createTheme({
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: customColors.body
+        },
+      },
+    },
     MuiButtonBase: {
       styleOverrides: {
         root: {
           fontFamily: 'Share Tech',
           fontSize: 14,
-          backgroundColor: customColors.primaryDark,
-          color: customColors.primaryMain,
-          border: '2px solid #212020',
+          backgroundColor: customColors.bgButons,
+          color: customColors.texColorButtons,
+          border: customColors.border,
           borderRadius: '10px',
           padding: '10px 0px',
           cursor: 'pointer',
           width: '100%',
           transition: 'background-color 0.3s',
           '&:hover': {
-            backgroundColor: '#EEE8D9',
-            color: customColors.primaryDark
-        },
+            backgroundColor: customColors.bgInput,
+            color: customColors.texColorButtons
+          },
         }
       }
     },
     MuiInputBase: {
       styleOverrides: {
         root: {
-          border: '2px solid #212020',
+          border: customColors.border,
           fontFamily: 'Share Tech',
           width: '100%',
           borderRadius: '10px',
-          backgroundColor: customColors.primaryLight,
+          backgroundColor: customColors.bgInput,
+          color: customColors.textColor,
           paddingLeft: 15,
           paddingTop: 2,
           paddingBottom: 2,
+          marginBottom: 5
         }
       }
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          border: '2px solid #212020',
+          border: customColors.border,
           fontFamily: 'Share Tech',
-          borderRadius: '15px',
-          backgroundColor: customColors.primaryMain,
-          padding: 25,
+          borderRadius: '10px',
+          backgroundColor: customColors.card,
+          padding: 20,
           width: '100%',
           boxSizing: 'border-box',
         }
@@ -61,16 +73,16 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: 'Share Tech',
+          color: customColors.textColor
         }
       }
-    }, 
+    },
   },
   palette: {
     primary: {
-      main: customColors.primaryMain,
-      light: customColors.primaryLight,
-      dark: customColors.primaryDark,
-      contrastText: customColors.contrastText,
+      main: customColors.card,
+      light: customColors.bgInput,
+      dark: customColors.bgButons,
     }
   },
 });
