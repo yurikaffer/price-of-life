@@ -51,4 +51,5 @@ const InputSalary = forwardRef((props, ref) => {
     );
 });
 
+InputSalary.displayName = 'InputSalary';
 export default InputSalary;

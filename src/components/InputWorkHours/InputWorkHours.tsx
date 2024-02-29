@@ -52,4 +52,5 @@ const InputWorkHours = forwardRef((props, ref) => {
     );
 });
 
+InputWorkHours.displayName = 'InputWorkHours';
 export default InputWorkHours;

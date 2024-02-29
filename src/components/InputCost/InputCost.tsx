@@ -50,4 +50,5 @@ const InputCost = forwardRef((props, ref) => {
     );
 });
 
+InputCost.displayName = 'InputCost';
 export default InputCost;
