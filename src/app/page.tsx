@@ -1,10 +1,11 @@
 'use client'
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Navbar from '@/components/NavbarComponent';
 import CardForm from '@/components/CardFormComponent';
 import ResultButtons from '@/components/ResultButtonsComponent';
 import CardResume from '@/components/CardResumeComponent';
 import CardResultList from '@/components/CardResultList/CardResultList';
+import CardAiResultList from '@/components/CardResultList/CardAiResultList';
 
 export default function Home() {
 
@@ -17,8 +18,7 @@ export default function Home() {
         <ResultButtons />
         <CardResume/>
         <CardResultList/>
-
-
+        <CardAiResultList/>
 
       </Box>
     </Box>

@@ -5,7 +5,7 @@ import CardResult from '../CardResult/CardResult';
 const CardResultList: React.FC = () => {
     const { hourlyIncome, 
             hoursNeededToPurchase, 
-            resumeSelected, 
+            overviewSelected, 
             workDaystoPurchase, 
             percentageOfSalary, 
             annualCostInReais, 
@@ -21,7 +21,7 @@ const CardResultList: React.FC = () => {
         }
     }
 
-    if (!resumeSelected && hourlyIncome && hoursNeededToPurchase && workDaystoPurchase && percentageOfSalary) {
+    if (overviewSelected && hourlyIncome && hoursNeededToPurchase && workDaystoPurchase && percentageOfSalary) {
         return (
             <>
                 <CardResult title='Rendimento por hora'>

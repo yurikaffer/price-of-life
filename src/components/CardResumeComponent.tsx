@@ -3,7 +3,16 @@ import { Card, Typography } from '@mui/material';
 import React from 'react';
 
 const CardResume: React.FC = () => {
-    const { hourlyIncome, hoursNeededToPurchase, resumeSelected, workDaystoPurchase, percentageOfSalary, annualCostInReais, annualCostInTime, numRecorrence, isChecked } = useGlobalContext();
+    const { hourlyIncome, 
+            hoursNeededToPurchase, 
+            resumeSelected, 
+            workDaystoPurchase, 
+            percentageOfSalary, 
+            annualCostInReais, 
+            annualCostInTime, 
+            numRecorrence 
+        } = useGlobalContext();
+        
     if (resumeSelected && hourlyIncome && hoursNeededToPurchase && workDaystoPurchase && percentageOfSalary) {
         return (
             <Card sx={{ padding: 2 }}>

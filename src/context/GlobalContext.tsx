@@ -14,6 +14,10 @@ interface GlobalContextType {
     percentageOfSalary: string;
     annualCostInReais: string;
     annualCostInTime: string;
+    resumeAISelected: boolean;
+    overviewSelected: boolean;
+    setOverviewSelected: (value: boolean) => void;
+    setResumeAISelected: (value: boolean) => void;
     setAnnualCostInTime: (value: string) => void;
     setAnnualCostInReais: (value: string) => void;
     setPercentageOfSalary: (value: string) => void;
@@ -42,6 +46,8 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
     const [workHours, setWorkHours] = useState('');
     const [hourlyIncome, setHourlyIncome] = useState('')
     const [resumeSelected, setResumeSelected] = useState(false)
+    const [resumeAISelected, setResumeAISelected] = useState(false)
+    const [overviewSelected, setOverviewSelected] = useState(true)
     const [hoursNeededToPurchase, setHoursNeededToPurchase] = useState('')
     const [workDaystoPurchase, setWorkDaystoPurchase] = useState('')
     const [percentageOfSalary, setPercentageOfSalary] = useState('')
@@ -84,7 +90,11 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
                 annualCostInReais, 
                 setAnnualCostInReais,
                 annualCostInTime, 
-                setAnnualCostInTime
+                setAnnualCostInTime,
+                resumeAISelected, 
+                setResumeAISelected,
+                overviewSelected,
+                 setOverviewSelected
             }}>
             {children }
         </GlobalContext.Provider>
