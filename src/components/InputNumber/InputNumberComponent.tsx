@@ -15,7 +15,7 @@ const InputNumberComponent: React.FC = () => {
         <>
             { isChecked && (
                 <div className="number-control">
-                    <input name="number" className="number-quantity" disabled value={`${numRecorrence} x/mês`}/>
+                    <input name="number" className="number-quantity" value={`${numRecorrence} x/mês`}/>
                     <div className="number-right" onClick={() => setNumRecorrence(numRecorrence +1)}></div>
                     <div className="number-left" onClick={subtractNumber}></div>
                 </div>

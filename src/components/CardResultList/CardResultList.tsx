@@ -3,15 +3,15 @@ import React from 'react';
 import CardResult from '../CardResult/CardResult';
 
 const CardResultList: React.FC = () => {
-    const { hourlyIncome, 
-            hoursNeededToPurchase, 
-            overviewSelected, 
-            workDaystoPurchase, 
-            percentageOfSalary, 
-            annualCostInReais, 
-            annualCostInTime, 
-            numRecorrence, 
-        } = useGlobalContext();
+    const { hourlyIncome,
+        hoursNeededToPurchase,
+        overviewSelected,
+        workDaystoPurchase,
+        percentageOfSalary,
+        annualCostInReais,
+        annualCostInTime,
+        numRecorrence,
+    } = useGlobalContext();
 
     const renderRecorrence = () => {
         if (numRecorrence > 1) {
@@ -25,22 +25,23 @@ const CardResultList: React.FC = () => {
         return (
             <>
                 <CardResult title='Rendimento por hora'>
-                    Seu rendimento por hora é de <strong className="strongColor">{hourlyIncome}</strong>. Cada hora de trabalho lhe proporciona esse valor para
-                    gastar ou economizar. Ao avaliar o custo do item, você está trocando <strong className="strongColor">{workDaystoPurchase}</strong> de trabalho
-                    pelo valor que ele oferece.
+                    Seu rendimento por hora é de <strong className="strongColor">{hourlyIncome}</strong>.
+                    Ao avaliar o custo do item e seu rendimento por hora em sua jornada de trabalho,
+                    este item está lhe custando <strong className="strongColor">{workDaystoPurchase}</strong> de trabalho.
                 </CardResult>
-                
+
                 <CardResult title='Tempo de vida'>
-                    Baseado no seu salário líquido, o item deve lhe custar um tempo de vida de <strong className="strongColor">{hoursNeededToPurchase}</strong>.
-                    Você precisará trabalhar aproximadamente <strong className="strongColor">{workDaystoPurchase}</strong> para pagar este item. 
-                    Isso significa que <strong className="strongColor">{percentageOfSalary}%</strong> do seu salário mensal.
+                    Fora a sua jornada de trabalho, esse item deve lhe custar <strong className="strongColor">{hoursNeededToPurchase}</strong>
+                    em tempo de vida.
+                    Trabalhando <strong className="strongColor">{workDaystoPurchase}</strong> para pagar este item,
+                    significa que custa <strong className="strongColor">{percentageOfSalary}%</strong> do seu salário mensal.
                 </CardResult>
-                
+
                 {annualCostInReais && annualCostInTime && (
                     <CardResult title='Despesa recorrente'>
-                        Ao marcar este item como uma despesa recorrente e comprá-lo <strong className="strongColor">{renderRecorrence()}</strong> por mês, você
-                        gastará um total de <strong className="strongColor">{annualCostInReais}</strong> anualmente. 
-                        Isso equivale a <strong className="strongColor">{annualCostInTime}</strong> trabalhando.
+                        Se você compra esse item <strong className="strongColor">{renderRecorrence()}</strong> por mês, em um ano
+                        você está gastando <strong className="strongColor">{annualCostInReais}</strong>.
+                        Isso equivale a <strong className="strongColor">{annualCostInTime}</strong> de trabalho.
                     </CardResult>
                 )}
             </>

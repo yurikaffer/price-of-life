@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <Box display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} mt={2}>
-      <Box width={'95%'} display={'flex'} flexDirection={'column'} gap={1.5}>
+      <Box width={'95%'} display={'flex'} flexDirection={'column'} gap={1.5} maxWidth={'700px'}>
 
         <Navbar />
         <CardForm />

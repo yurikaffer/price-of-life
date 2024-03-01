@@ -33,6 +33,8 @@
     font-family: 'Share Tech';
     background-color: #3A3C45;
     color: #DDDDDD;
+    pointer-events: none;
+    cursor: not-allowed; 
   }
   
   .number-left:hover::before,

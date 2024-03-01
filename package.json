@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/checkbox": "^2.3.2",
-    "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.10",
@@ -18,7 +16,6 @@
     "dotenv": "^16.4.5",
     "next": "14.1.0",
     "openai": "^4.28.0",
-    "primereact": "^10.5.1",
     "react": "^18",
     "react-dom": "^18",
     "zod": "^3.22.4"
