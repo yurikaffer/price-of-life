@@ -30,6 +30,7 @@ interface GlobalContextType {
     setWorkHours: (value: string) => void;
     setNumRecorrence: (value: number) => void;
     handleCheckboxChange: () => void;
+    clearStates: () => void;
 }
 
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
@@ -65,6 +66,23 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
         }
     };
 
+    const clearStates = () => {
+        setOverviewSelected(true)
+        setResumeAISelected(false)
+        setAnnualCostInTime('')
+        setAnnualCostInReais('')
+        setPercentageOfSalary('')
+        setWorkDaystoPurchase('')
+        setHoursNeededToPurchase('')
+        setResumeSelected(false)
+        setHourlyIncome('')
+        setSalary('')
+        setCost('')
+        setWorkHours('')
+        setNumRecorrence(1)
+        setIsChecked(false)
+    }
+
     return (
         <GlobalContext.Provider value= {{ 
                 isChecked, 
@@ -94,7 +112,8 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
                 resumeAISelected, 
                 setResumeAISelected,
                 overviewSelected,
-                 setOverviewSelected
+                setOverviewSelected,
+                clearStates
             }}>
             {children }
         </GlobalContext.Provider>

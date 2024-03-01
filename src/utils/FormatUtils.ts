@@ -4,7 +4,7 @@ export const formatToCurrency = (value: string) => {
 };
 
 export function convertCurrencyStringToNumber(currencyString: string): number {
-    // e substitui a vírgula decimal por ponto para conversão correta.
+    // substitui a vírgula decimal por ponto para conversão correta.
     const numericString = currencyString.replace('R$', '').trim().replace(/\./g, '').replace(',', '.');
     // Converte a string limpa para número, então multiplica por 100 para converter em centavos
     const numberInCents = Math.round(parseFloat(numericString) * 100);

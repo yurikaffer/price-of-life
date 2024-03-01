@@ -83,6 +83,9 @@ const theme = createTheme({
       main: customColors.card,
       light: customColors.bgInput,
       dark: customColors.bgButons,
+    },
+    secondary: {
+      main: customColors.bgButons,
     }
   },
 });

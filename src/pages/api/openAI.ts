@@ -30,7 +30,7 @@ export default async function handler(
   try {
     const completion = await openai.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
-      model: "gpt-3.5-turbo-0125",
+      model: "gpt-3.5-turbo",
       temperature: 0.7,
       max_tokens: 250,
     });

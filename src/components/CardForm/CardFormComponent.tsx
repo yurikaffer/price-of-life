@@ -1,11 +1,11 @@
 'use client'
 import { Box, ButtonBase, Card } from '@mui/material';
 import React, { useRef } from 'react';
-import CheckBoxComponent from './CheckBox/CheckBoxComponent';
-import InputNumberComponent from './InputNumber/InputNumberComponent';
-import InputSalary from './InputSalary/InputSalary';
-import InputCost from './InputCost/InputCost';
-import InputWorkHours from './InputWorkHours/InputWorkHours';
+import CheckBoxComponent from '../CheckBox/CheckBoxComponent';
+import InputNumberComponent from '../InputNumber/InputNumberComponent';
+import InputSalary from '../InputSalary/InputSalary';
+import InputCost from '../InputCost/InputCost';
+import InputWorkHours from '../InputWorkHours/InputWorkHours';
 import { useGlobalContext } from '@/context/GlobalContext';
 import { calculateData } from '@/utils/Calculation';
 
